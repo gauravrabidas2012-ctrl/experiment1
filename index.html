@@ -4,79 +4,38 @@
   <meta name="google-site-verification" content="sKWXECj7V9IQINkBaV7BHMQ_DgZ3whfzxb1zud-sI-I" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- GOOGLE SEARCH CONSOLE VERIFICATION: KEEP THIS TAG -->
-<meta name="google-site-verification"
-content="sKWXECj7V9IQINkBaV7BHMQ_DgZ3whfzxb1zud-sI-I">
-
-<!-- SEO -->
-<title>Gaurav Rabidas | Student, Creator & Editor</title>
-<meta name="description"
-content="Welcome to the official website of Gaurav Rabidas, a student, creator, video editor and aspiring technology entrepreneur from Assam, India.">
-<meta name="keywords"
-content="Gaurav Rabidas, student, Assam, creator, video editor, coding, technology, personal website">
-<meta name="author" content="Gaurav Rabidas">
-<meta name="robots" content="index, follow">
-<meta name="theme-color" content="#080812">
-
-<!-- OPEN GRAPH -->
-<meta property="og:title" content="Gaurav Rabidas | Official Website">
-<meta property="og:description"
-content="Explore my journey, projects, skills, creativity and future vision.">
-<meta property="og:type" content="website">
-<meta property="og:url"
-content="https://gauravrabidas2012-ctrl.github.io/Gaurav-Rabidas-/">
+<meta name="description" content="Gaurav Rabidas is a student and developer from Sribhumi, Assam, India, and founder of Trendix Studios. Explore his games, projects, skills, and contact links.">
+<title>Gaurav Rabidas — Student, Developer & Founder</title>
 
 <style>
-/* =====================================
-   01. GLOBAL DESIGN SYSTEM
-===================================== */
-
 :root {
-  --bg: #080812;
-  --surface: #101020;
-  --surface2: #17172b;
-  --purple: #9b5cff;
-  --blue: #4d8dff;
-  --pink: #ff5fd2;
-  --cyan: #50e8ff;
-  --text: #f5f5ff;
-  --muted: #aaaac4;
-  --border: rgba(255,255,255,.1);
-  --radius: 22px;
-  --shadow: 0 0 35px rgba(155,92,255,.12);
+  --bg: #080a10;
+  --panel: #10141f;
+  --panel2: #151b2a;
+  --text: #f2f5ff;
+  --muted: #a5aec4;
+  --line: #252d40;
+  --accent: #8b7cff;
+  --accent2: #52e0c4;
+  --glow: rgba(139,124,255,.2);
 }
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth;
 }
 
 html {
-  scroll-padding-top: 100px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.7;
-  overflow-x: hidden;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: -2;
-  background:
-    radial-gradient(ellipse at 10% 10%,
-      rgba(100,60,220,.15), transparent 40%),
-    radial-gradient(ellipse at 90% 60%,
-      rgba(20,100,255,.1), transparent 40%);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.65;
 }
 
 a {
@@ -86,1701 +45,1359 @@ a {
 
 button {
   font: inherit;
-  cursor: pointer;
 }
 
+.shell {
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 75% 0%,
+      rgba(139,124,255,.13), transparent 32%),
+    radial-gradient(ellipse at 0% 38%,
+      rgba(82,224,196,.07), transparent 28%),
+    var(--bg);
+  min-height: 100vh;
+}
+
+/* NAVIGATION */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(8,10,16,.82);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.nav-inner {
+  max-width: 1160px;
+  margin: auto;
+  padding: 14px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-weight: 800;
+  letter-spacing: -.03em;
+}
+
+.brand-mark {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  background: linear-gradient(135deg,var(--accent),var(--accent2));
+  color: #090b12;
+  font-weight: 950;
+}
+
+.brand small {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+  margin-top: -4px;
+}
+
+.navlinks {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.navlinks a:hover,
+.navlinks a.active {
+  color: var(--text);
+}
+
+.nav-cta,
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid var(--line);
+  padding: 11px 16px;
+  border-radius: 13px;
+  font-size: 13px;
+  font-weight: 750;
+  transition: .2s;
+}
+
+.nav-cta,
+.btn.primary {
+  background: linear-gradient(110deg,var(--accent),#6d8dff);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 8px 30px var(--glow);
+}
+
+.btn:hover,
+.nav-cta:hover {
+  transform: translateY(-2px);
+}
+
+.menu-btn {
+  display: none;
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--line);
+  padding: 8px 11px;
+  border-radius: 10px;
+}
+
+/* LAYOUT */
+
 .container {
-  width: min(1150px, 92%);
+  width: min(1080px,calc(100% - 40px));
   margin: auto;
 }
 
-section {
-  padding: 95px 0;
-  position: relative;
-}
-
-.section-label {
-  color: var(--cyan);
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  font-size: 12px;
-  font-weight: bold;
-}
-
-.section-title {
-  font-size: clamp(30px, 5vw, 48px);
-  line-height: 1.2;
-  margin: 12px 0 20px;
-  letter-spacing: -1.5px;
-}
-
-.section-description {
-  max-width: 680px;
-  color: var(--muted);
-  margin-bottom: 35px;
-}
-
-.gradient-text {
-  background: linear-gradient(
-    90deg,
-    var(--purple),
-    var(--pink),
-    var(--cyan)
-  );
-  background-size: 200% auto;
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-  animation: gradientMove 5s linear infinite;
-}
-
-@keyframes gradientMove {
-  to { background-position: 200% center; }
-}
-
-@keyframes float {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-}
-
-@keyframes pulse {
-  0%,100% { opacity: .5; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.05); }
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(25px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* =====================================
-   02. NAVIGATION
-===================================== */
-
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(8,8,18,.85);
-  backdrop-filter: blur(18px);
-  border-bottom: 1px solid var(--border);
-}
-
-.navbar {
-  min-height: 76px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.logo {
-  font-size: 21px;
-  font-weight: 900;
-  white-space: nowrap;
-}
-
-.logo span {
-  color: var(--purple);
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  list-style: none;
-}
-
-.nav-links a {
-  font-size: 13px;
-  color: var(--muted);
-  transition: .25s;
-}
-
-.nav-links a:hover {
-  color: var(--cyan);
-}
-
-.menu-toggle {
-  display: none;
-  color: white;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 8px 12px;
-  background: var(--surface);
-}
-
-/* =====================================
-   03. BUTTONS
-===================================== */
-
-.btn {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  padding: 13px 21px;
-  border-radius: 12px;
-  font-weight: bold;
-  font-size: 14px;
-  border: 1px solid var(--border);
-  transition: .3s;
-}
-
-.btn-primary {
-  background: linear-gradient(100deg,var(--purple),#665cff);
-  border: none;
-  box-shadow: 0 0 25px rgba(155,92,255,.3);
-}
-
-.btn:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 0 28px rgba(155,92,255,.35);
-}
-
-.btn-outline {
-  background: rgba(255,255,255,.03);
-}
-
-/* =====================================
-   04. HERO
-===================================== */
-
 .hero {
-  min-height: 90vh;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-
-.hero-grid {
+  padding: 94px 0 76px;
   display: grid;
-  grid-template-columns: 1.3fr .7fr;
+  grid-template-columns: 1.12fr .88fr;
   align-items: center;
-  gap: 50px;
+  gap: 56px;
+  min-height: 600px;
 }
 
-.status {
+.eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,.04);
-  padding: 8px 14px;
-  border-radius: 30px;
-  font-size: 12px;
-  color: var(--muted);
-  margin-bottom: 25px;
-}
-
-.status-dot {
-  width: 8px;
-  height: 8px;
-  background: #54ffad;
-  border-radius: 50%;
-  box-shadow: 0 0 12px #54ffad;
-}
-
-.hero h1 {
-  font-size: clamp(43px, 7vw, 82px);
-  line-height: 1.05;
-  letter-spacing: -4px;
-  margin-bottom: 22px;
-}
-
-.hero p {
-  max-width: 600px;
-  color: var(--muted);
-  font-size: 17px;
-  margin-bottom: 30px;
-}
-
-.hero-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-}
-
-.hero-visual {
-  min-height: 350px;
-  display: grid;
-  place-items: center;
-  position: relative;
-}
-
-.orbit {
-  width: 280px;
-  height: 280px;
-  border: 1px solid rgba(155,92,255,.35);
-  border-radius: 50%;
-  position: absolute;
-  animation: spin 18s linear infinite;
-}
-
-.orbit::before {
-  content: "";
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  top: 28px;
-  left: 45px;
-  border-radius: 50%;
-  background: var(--cyan);
-  box-shadow: 0 0 25px var(--cyan);
-}
-
-.orbit-two {
-  width: 220px;
-  height: 220px;
-  border-color: rgba(255,95,210,.35);
-  animation-direction: reverse;
-  animation-duration: 13s;
-}
-
-.hero-core {
-  width: 160px;
-  height: 160px;
-  border-radius: 35px;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(135deg,#30175c,#101b42);
-  border: 1px solid rgba(255,255,255,.18);
-  box-shadow: 0 0 80px rgba(155,92,255,.25);
-  transform: rotate(-8deg);
-  animation: float 5s ease-in-out infinite;
-}
-
-.hero-core span {
-  font-size: 58px;
-  font-weight: 900;
-  transform: rotate(8deg);
-}
-
-/* =====================================
-   05. CARDS
-===================================== */
-
-.grid-2,
-.grid-3,
-.grid-4 {
-  display: grid;
-  gap: 22px;
-}
-
-.grid-2 { grid-template-columns: repeat(2,minmax(0,1fr)); }
-.grid-3 { grid-template-columns: repeat(3,minmax(0,1fr)); }
-.grid-4 { grid-template-columns: repeat(4,minmax(0,1fr)); }
-
-.card {
-  padding: 27px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: linear-gradient(
-    145deg,
-    rgba(255,255,255,.045),
-    rgba(255,255,255,.015)
-  );
-  transition: transform .3s, border-color .3s, box-shadow .3s;
-  height: 100%;
-}
-
-.card:hover {
-  transform: translateY(-7px);
-  border-color: rgba(155,92,255,.65);
-  box-shadow: var(--shadow);
-}
-
-.card-icon {
-  width: 48px;
-  height: 48px;
-  display: grid;
-  place-items: center;
-  background: rgba(155,92,255,.13);
-  border-radius: 14px;
-  font-size: 24px;
-  margin-bottom: 18px;
-}
-
-.card h3 {
-  margin-bottom: 10px;
-  font-size: 19px;
-}
-
-.card p {
-  color: var(--muted);
-  font-size: 14px;
-}
-
-.tag {
-  display: inline-block;
-  padding: 5px 10px;
-  background: rgba(155,92,255,.13);
-  color: #c9a7ff;
-  border-radius: 30px;
+  padding: 7px 11px;
+  border: 1px solid #2b344b;
+  background: #111522;
+  border-radius: 99px;
+  color: #c6c9ff;
   font-size: 11px;
-  margin: 5px 4px 0 0;
+  font-weight: 800;
+  letter-spacing: .13em;
+  text-transform: uppercase;
 }
 
-/* =====================================
-   06. ABOUT
-===================================== */
-
-.about-layout {
-  display: grid;
-  grid-template-columns: .8fr 1.2fr;
-  gap: 45px;
-  align-items: start;
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent2);
+  box-shadow: 0 0 12px var(--accent2);
 }
 
-.about-panel {
-  padding: 35px;
-  background: linear-gradient(145deg,#17112b,#10152a);
-  border: 1px solid var(--border);
-  border-radius: 25px;
-  text-align: center;
-}
-
-.avatar {
-  width: 125px;
-  height: 125px;
-  border-radius: 35px;
-  margin: 0 auto 20px;
-  display: grid;
-  place-items: center;
-  font-size: 43px;
-  font-weight: 900;
-  background: linear-gradient(135deg,var(--purple),var(--blue));
-  box-shadow: 0 0 35px rgba(155,92,255,.2);
-}
-
-.about-text {
-  color: var(--muted);
-  margin-bottom: 20px;
-}
-
-.fact {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 13px 0;
-  border-bottom: 1px solid var(--border);
-  font-size: 14px;
-}
-
-.fact span:first-child { color: var(--muted); }
-.fact span:last-child { text-align: right; }
-
-/* =====================================
-   07. SKILLS
-===================================== */
-
-.skill-item {
+h1 {
+  font-size: clamp(43px,6vw,76px);
+  line-height: 1.03;
+  letter-spacing: -.065em;
   margin: 22px 0;
 }
 
-.skill-heading {
+.gradient {
+  background: linear-gradient(100deg,#fff 5%,#b9b2ff 48%,#71ead3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.lead {
+  color: var(--muted);
+  font-size: 17px;
+  max-width: 580px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 28px 0;
+}
+
+.btn.secondary {
+  background: #111522;
+}
+
+.tiny-note {
+  font-size: 12px;
+  color: #79839c;
+}
+
+/* HERO ARTWORK */
+
+.visual {
+  position: relative;
+  min-height: 390px;
+  display: grid;
+  place-items: center;
+}
+
+.orb {
+  position: absolute;
+  width: 310px;
+  height: 310px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 25%,
+      #b9b2ff,#6d62db 36%,#20264a 70%,transparent 72%);
+  filter: drop-shadow(0 0 60px rgba(139,124,255,.24));
+  opacity: .88;
+}
+
+.orbit {
+  position: absolute;
+  width: 390px;
+  height: 145px;
+  border: 1px solid rgba(159,151,255,.5);
+  border-radius: 50%;
+  transform: rotate(-32deg);
+}
+
+.orbit.two {
+  transform: rotate(54deg);
+  width: 350px;
+  height: 170px;
+  border-color: rgba(82,224,196,.4);
+}
+
+.hero-card {
+  position: relative;
+  z-index: 1;
+  width: min(320px,90%);
+  padding: 25px;
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 25px;
+  background: rgba(12,15,25,.8);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 25px 80px #0008;
+}
+
+.monogram {
+  font-size: 72px;
+  font-weight: 950;
+  line-height: 1;
+  letter-spacing: -.1em;
+  background: linear-gradient(135deg,#fff,#9b91ff 65%,#55e3c7);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero-card p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.card-footer {
   display: flex;
   justify-content: space-between;
-  gap: 10px;
-  margin-bottom: 9px;
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+  margin-top: 18px;
+  font-size: 11px;
+  color: #b5bfd4;
+}
+
+/* SECTIONS */
+
+.section {
+  padding: 82px 0;
+  border-top: 1px solid rgba(255,255,255,.055);
+}
+
+.section-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.kicker {
+  color: var(--accent2);
+  font-size: 11px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  font-weight: 850;
+}
+
+.section h2 {
+  font-size: clamp(30px,4vw,45px);
+  letter-spacing: -.05em;
+  line-height: 1.12;
+  margin: 8px 0 0;
+}
+
+.section-intro {
+  max-width: 460px;
+  color: var(--muted);
   font-size: 14px;
 }
 
-.skill-track {
-  height: 8px;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 16px;
+}
+
+.panel {
+  border: 1px solid var(--line);
   border-radius: 20px;
-  background: #25253b;
-  overflow: hidden;
+  padding: 24px;
+  background: linear-gradient(
+    145deg,
+    rgba(21,27,42,.92),
+    rgba(13,16,25,.95)
+  );
+  transition: .25s;
 }
 
-.skill-fill {
-  height: 100%;
-  border-radius: inherit;
-  width: var(--level);
-  background: linear-gradient(90deg,var(--purple),var(--cyan));
+.panel:hover {
+  transform: translateY(-4px);
+  border-color: #55507e;
 }
 
-/* =====================================
-   08. PROJECTS
-===================================== */
-
-.project-card {
-  overflow: hidden;
-  padding: 0;
-}
-
-.project-cover {
-  min-height: 155px;
+.icon {
+  width: 43px;
+  height: 43px;
   display: grid;
   place-items: center;
-  font-size: 55px;
-  background:
-    radial-gradient(circle at 20% 20%,#5631a0,transparent 45%),
-    linear-gradient(135deg,#17182e,#101b35);
+  border-radius: 14px;
+  background: #22213b;
+  color: #c8c2ff;
+  font-size: 20px;
+  margin-bottom: 18px;
 }
 
-.project-content {
-  padding: 24px;
+.panel h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  letter-spacing: -.025em;
 }
 
-.project-content p {
-  margin-bottom: 14px;
+.panel p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
 }
 
-/* =====================================
-   09. JOURNEY TIMELINE
-===================================== */
-
-.timeline {
-  border-left: 2px solid rgba(155,92,255,.5);
-  margin-left: 10px;
-  padding-left: 30px;
+.tag {
+  display: inline-flex;
+  border: 1px solid #333d55;
+  background: #171d2b;
+  color: #c2c9dc;
+  padding: 5px 9px;
+  border-radius: 8px;
+  font-size: 10px;
+  font-weight: 750;
+  margin: 15px 5px 0 0;
 }
 
-.timeline-item {
+/* GAME CARDS */
+
+.game-art {
+  height: 150px;
+  border-radius: 14px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: end;
+  padding: 17px;
+  overflow: hidden;
   position: relative;
-  margin-bottom: 30px;
-  padding: 24px;
-  border: 1px solid var(--border);
-  border-radius: 17px;
-  background: rgba(255,255,255,.025);
+  background:
+    radial-gradient(circle at 80% 20%,
+      #a79cff,transparent 30%),
+    linear-gradient(135deg,#26234e,#111522 70%);
 }
 
-.timeline-item::before {
+.game-art.velocity {
+  background:
+    radial-gradient(circle at 75% 22%,
+      #57e6d0,transparent 24%),
+    linear-gradient(135deg,#102e3c,#15162a 70%);
+}
+
+.game-art span {
+  font-weight: 950;
+  font-size: 25px;
+  letter-spacing: -.05em;
+  position: relative;
+  z-index: 1;
+}
+
+.game-art:after {
   content: "";
   position: absolute;
-  left: -39px;
-  top: 30px;
-  width: 14px;
-  height: 14px;
-  background: var(--purple);
+  width: 140px;
+  height: 140px;
+  border: 1px solid #ffffff33;
   border-radius: 50%;
-  box-shadow: 0 0 15px var(--purple);
+  right: 22px;
+  top: 20px;
+  box-shadow:
+    0 0 0 18px #ffffff08,
+    0 0 0 38px #ffffff05;
 }
 
-.timeline-item p {
-  color: var(--muted);
-  margin-top: 8px;
-}
-
-/* =====================================
-   10. BLOG
-===================================== */
-
-.blog-meta {
-  color: var(--cyan);
+.text-link {
+  display: inline-flex;
+  gap: 8px;
+  color: #c3bcff;
+  font-weight: 800;
   font-size: 12px;
-  margin-bottom: 10px;
+  margin-top: 18px;
 }
 
-.blog-card h3 {
-  font-size: 20px;
+/* JOURNEY */
+
+.split {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 36px;
+  align-items: start;
 }
 
-/* =====================================
-   11. GALLERY
-===================================== */
+.manifesto {
+  font-size: 23px;
+  line-height: 1.4;
+  letter-spacing: -.035em;
+}
 
-.gallery-box {
-  min-height: 180px;
-  border: 1px solid var(--border);
-  border-radius: 18px;
+.manifesto strong {
+  color: #bcb4ff;
+}
+
+.list {
+  display: grid;
+  gap: 12px;
+}
+
+.list-row {
+  display: flex;
+  gap: 15px;
+  padding: 17px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: #0d111b;
+}
+
+.list-row b {
+  display: block;
+  font-size: 14px;
+}
+
+.list-row span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+.num {
+  color: var(--accent2);
+  font-weight: 900;
+  font-size: 12px;
+  padding-top: 2px;
+}
+
+/* STUDIO */
+
+.studio-banner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 25px;
+  align-items: center;
+  border: 1px solid #353252;
+  border-radius: 24px;
+  padding: 32px;
+  background:
+    radial-gradient(ellipse at 100% 0%,
+      #28234c,transparent 55%),
+    #11131f;
+}
+
+.studio-banner h3 {
+  font-size: 27px;
+  margin: 8px 0;
+  letter-spacing: -.04em;
+}
+
+.studio-banner p {
+  color: var(--muted);
+  font-size: 14px;
+  max-width: 620px;
+  margin-bottom: 0;
+}
+
+.studio-symbol {
+  width: 95px;
+  height: 95px;
+  border-radius: 28px;
   display: grid;
   place-items: center;
-  text-align: center;
-  padding: 20px;
-  background: linear-gradient(135deg,#17142b,#101a31);
-  transition: .3s;
-}
-
-.gallery-box:hover {
-  transform: scale(1.025);
-  border-color: var(--cyan);
-}
-
-.gallery-box span {
-  font-size: 42px;
-  display: block;
-  margin-bottom: 10px;
-}
-
-/* =====================================
-   12. GOALS
-===================================== */
-
-.goal-number {
   font-size: 35px;
-  font-weight: 900;
-  color: var(--purple);
-  margin-bottom: 10px;
+  font-weight: 950;
+  color: #0b0d15;
+  background: linear-gradient(135deg,#b3a9ff,#57e6cf);
+  box-shadow: 0 10px 40px #8b7cff22;
 }
 
-/* =====================================
-   13. CONTACT
-===================================== */
+/* SKILLS */
 
-.contact-panel {
-  padding: 40px;
-  border-radius: 25px;
-  border: 1px solid rgba(155,92,255,.3);
-  background:
-    radial-gradient(circle at top right,
-      rgba(155,92,255,.12), transparent 45%),
-    var(--surface);
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 11px 14px;
+  background: #111522;
+  color: #d3d9e9;
+  font-size: 12px;
+}
+
+/* CONTACT */
+
+.contact {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  gap: 24px;
+}
+
+.contact-box {
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--panel);
+}
+
+.contact-box h3 {
+  font-size: 23px;
+  letter-spacing: -.04em;
+  margin-top: 0;
+}
+
+.contact-item {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.contact-item:last-child {
+  border-bottom: 0;
+}
+
+.contact-icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  background: #22213b;
+  border-radius: 12px;
+}
+
+.contact-item small {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.contact-item b {
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.contact-note {
+  font-size: 13px;
+  color: var(--muted);
 }
 
 .contact-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 10px;
+  margin-top: 20px;
 }
 
-/* =====================================
-   14. FOOTER
-===================================== */
+.social {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 13px;
+  background: #111522;
+  font-size: 12px;
+  font-weight: 800;
+}
 
-footer {
-  border-top: 1px solid var(--border);
-  padding: 35px 0;
+.social:hover {
+  border-color: var(--accent);
+  color: #c6c0ff;
+}
+
+/* FOOTER AND ANIMATIONS */
+
+.footer {
+  padding: 28px 0 40px;
+  border-top: 1px solid var(--line);
   color: var(--muted);
-  font-size: 13px;
+  font-size: 11px;
 }
 
 .footer-inner {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  gap: 15px;
   flex-wrap: wrap;
-  gap: 20px;
 }
 
-.footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
+.backtop {
+  color: #c5beff;
 }
-
-.footer-links a:hover { color: var(--cyan); }
-
-/* =====================================
-   15. REVEAL ANIMATIONS
-===================================== */
 
 .reveal {
   opacity: 0;
-  transform: translateY(25px);
-  transition: opacity .7s ease, transform .7s ease;
+  transform: translateY(16px);
+  transition: opacity .6s ease, transform .6s ease;
 }
 
 .reveal.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
-/* =====================================
-   16. BACK TO TOP
-===================================== */
-
-#backToTop {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  width: 45px;
-  height: 45px;
-  border: 1px solid var(--border);
-  background: var(--surface2);
-  color: white;
-  border-radius: 14px;
-  display: none;
-  z-index: 900;
-  box-shadow: var(--shadow);
+.page-label {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: .12em;
+  text-transform: uppercase;
 }
 
-/* =====================================
-   17. RESPONSIVE MOBILE DESIGN
-===================================== */
+/* RESPONSIVE DESIGN */
 
-@media(max-width:900px) {
-  .nav-links {
+@media(max-width:850px) {
+  .navlinks {
     display: none;
     position: absolute;
-    left: 4%;
-    right: 4%;
-    top: 75px;
-    padding: 22px;
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    background: #111120;
+    top: 67px;
+    left: 14px;
+    right: 14px;
+    padding: 16px;
+    background: #10141f;
+    border: 1px solid var(--line);
+    border-radius: 16px;
     flex-direction: column;
     align-items: stretch;
   }
 
-  .nav-links.open { display: flex; }
-  .menu-toggle { display: block; }
+  .navlinks.open {
+    display: flex;
+  }
 
-  .hero-grid,
-  .about-layout {
+  .navlinks a {
+    padding: 8px;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-cta {
+    display: none;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding-top: 65px;
+  }
+
+  .visual {
+    min-height: 320px;
+  }
+
+  .orb {
+    width: 240px;
+    height: 240px;
+  }
+
+  .orbit {
+    width: 310px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .split,
+  .contact {
     grid-template-columns: 1fr;
   }
 
-  .hero-visual { min-height: 300px; }
+  .section-head {
+    align-items: start;
+    flex-direction: column;
+  }
 
-  .grid-4 { grid-template-columns: repeat(2,minmax(0,1fr)); }
-}
-
-@media(max-width:600px) {
-  section { padding: 70px 0; }
-
-  .hero { min-height: auto; padding-top: 75px; }
-
-  .hero h1 { letter-spacing: -2px; }
-
-  .grid-2,
-  .grid-3,
-  .grid-4 {
+  .studio-banner {
     grid-template-columns: 1fr;
   }
 
-  .card { padding: 23px; }
-
-  .contact-panel { padding: 25px; }
-
-  .footer-inner { align-items: flex-start; flex-direction: column; }
+  .studio-symbol {
+    width: 70px;
+    height: 70px;
+    border-radius: 22px;
+  }
 }
 
-/* =====================================
-   END OF CSS DESIGN SYSTEM
-===================================== */
+@media(max-width:560px) {
+  .container {
+    width: min(100% - 28px,1080px);
+  }
+
+  .nav-inner {
+    padding: 11px 14px;
+  }
+
+  .hero {
+    padding: 53px 0 48px;
+    min-height: unset;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .lead {
+    font-size: 15px;
+  }
+
+  .visual {
+    min-height: 280px;
+  }
+
+  .hero-card {
+    width: 270px;
+    padding: 20px;
+  }
+
+  .monogram {
+    font-size: 60px;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .panel {
+    padding: 20px;
+  }
+
+  .contact-links {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .studio-banner {
+    padding: 23px;
+  }
+
+  .section h2 {
+    font-size: 34px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  * {
+    transition: none !important;
+  }
+}
 </style>
 </head>
 
 <body>
+<div class="shell" id="top">
 
-<!-- =====================================
-     NAVIGATION
-===================================== -->
+<header class="nav">
+  <div class="nav-inner">
 
-<header>
-  <div class="container navbar">
-    <a class="logo" href="#home">GAURAV<span>.</span></a>
+    <a class="brand" href="#top" aria-label="Gaurav Rabidas home">
+      <span class="brand-mark">GR</span>
+      <span>
+        GAURAV RABIDAS
+        <small>Personal Portfolio</small>
+      </span>
+    </a>
 
-    <button class="menu-toggle" id="menuToggle"
-    aria-label="Toggle navigation">☰ Menu</button>
+    <nav class="navlinks" id="navlinks" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#games">Games</a>
+      <a href="#studio">Studio</a>
+      <a href="#skills">Skills</a>
+      <a href="#journey">Journey</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#achievements">Achievements</a></li>
-      <li><a href="#blog">Blog</a></li>
-      <li><a href="#goals">Goals</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <a class="nav-cta" href="#contact">Get in touch ↗</a>
+
+    <button class="menu-btn" id="menuBtn"
+      aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
   </div>
 </header>
 
 <main>
 
-<!-- =====================================
-     PAGE 01 — HOME
-===================================== -->
+<!-- HOME -->
 
-<section class="hero" id="home">
-  <div class="container hero-grid">
+<section class="hero container" id="home">
 
-    <div class="reveal">
-      <div class="status">
-        <span class="status-dot"></span>
-        STUDENT • CREATOR • FUTURE BUILDER
-      </div>
+  <div class="reveal">
+    <div class="eyebrow">
+      <span class="dot"></span>
+      Student · Developer · Creator
+    </div>
 
-      <p class="section-label">Welcome to my digital world</p>
+    <h1>
+      Ideas into<br>
+      <span class="gradient">digital worlds.</span>
+    </h1>
 
-      <h1>
-        Hi, I'm<br>
-        <span class="gradient-text">Gaurav Rabidas.</span>
-      </h1>
+    <p class="lead">
+      <strong>Gaurav Rabidas</strong> is a student and developer from
+      Sribhumi, Assam, India. He creates games, builds digital projects,
+      and leads <strong>Trendix Studios</strong>—his independent creative studio.
+    </p>
 
+    <div class="hero-actions">
+      <a class="btn primary" href="#games">
+        Explore the games <span>↗</span>
+      </a>
+      <a class="btn secondary" href="#about">
+        Discover Gaurav ↓
+      </a>
+    </div>
+
+    <div class="tiny-note">
+      Curious mind. Builder mindset. Always learning.
+    </div>
+  </div>
+
+  <div class="visual reveal" aria-label="Abstract Gaurav Rabidas monogram artwork">
+    <div class="orb"></div>
+    <div class="orbit"></div>
+    <div class="orbit two"></div>
+
+    <div class="hero-card">
+      <div class="monogram">GR.</div>
       <p>
-        A student from Assam exploring technology, creativity,
-        coding, content creation and the world of innovation.
-        This is my personal space to document what I learn,
-        what I build and where I want to go.
+        Building projects one experiment at a time.
+        From first lines of code to playable ideas.
       </p>
-
-      <div class="hero-buttons">
-        <a href="#projects" class="btn btn-primary">Explore My Work ↗</a>
-        <a href="#about" class="btn btn-outline">Discover My Story</a>
+      <div class="card-footer">
+        <span>SRIBHUMI, ASSAM</span>
+        <span>IN · 01</span>
       </div>
     </div>
+  </div>
 
-    <div class="hero-visual reveal">
-      <div class="orbit"></div>
-      <div class="orbit orbit-two"></div>
-      <div class="hero-core"><span>GR.</span></div>
+</section>
+
+<!-- ABOUT -->
+
+<section class="section" id="about">
+  <div class="container">
+
+    <div class="section-head">
+      <div>
+        <div class="kicker">01 / About</div>
+        <h2>Meet the builder<br>behind the projects.</h2>
+      </div>
+
+      <p class="section-intro">
+        A student with an interest in technology, game development,
+        and turning imagination into things people can explore.
+      </p>
     </div>
 
+    <div class="grid">
+
+      <article class="panel reveal">
+        <div class="icon">📍</div>
+        <h3>Rooted in Assam</h3>
+        <p>
+          Gaurav Rabidas is from Sribhumi, Assam, India, and is
+          building his skills while continuing his education.
+        </p>
+        <span class="tag">India · Assam</span>
+      </article>
+
+      <article class="panel reveal">
+        <div class="icon">🧠</div>
+        <h3>Always learning</h3>
+        <p>
+          He enjoys exploring how websites, games, and digital
+          experiences work—and improving through hands-on projects.
+        </p>
+        <span class="tag">Learn by building</span>
+      </article>
+
+      <article class="panel reveal">
+        <div class="icon">🚀</div>
+        <h3>Builder mindset</h3>
+        <p>
+          From experimenting with game ideas to making web projects,
+          he focuses on learning by creating and iterating.
+        </p>
+        <span class="tag">Creative technology</span>
+      </article>
+
+    </div>
   </div>
 </section>
 
-<!-- =====================================
-     PAGE 02 — ABOUT ME
-===================================== -->
+<!-- GAMES AND PROJECTS -->
 
-<section id="about">
+<section class="section" id="games">
   <div class="container">
-    <p class="section-label">01 / About me</p>
-    <h2 class="section-title">The person behind<br><span class="gradient-text">the vision.</span></h2>
 
-    <div class="about-layout">
+    <div class="section-head">
+      <div>
+        <div class="kicker">02 / Games & Projects</div>
+        <h2>Made to be played.<br>Built to keep improving.</h2>
+      </div>
 
-      <div class="about-panel reveal">
-        <div class="avatar">GR</div>
-        <h3>Gaurav Rabidas</h3>
-        <p class="about-text">Student • Creator • Learner</p>
-        <div class="fact"><span>Location</span><span>Assam, India</span></div>
-        <div class="fact"><span>Current focus</span><span>Learning & building</span></div>
-        <div class="fact"><span>Interests</span><span>Technology & creativity</span></div>
-        <div class="fact"><span>Mindset</span><span>Progress over perfection</span></div>
+      <p class="section-intro">
+        A growing collection of game experiments and digital builds.
+        These projects mark Gaurav’s progress as a creator.
+      </p>
+    </div>
+
+    <div class="grid">
+
+      <article class="panel reveal">
+        <div class="game-art velocity">
+          <span>VELOCITY X</span>
+        </div>
+
+        <h3>Velocity X</h3>
+        <p>
+          A game project from Trendix Studios’ creator, focused on
+          bringing an exciting, responsive play experience to life.
+        </p>
+
+        <span class="tag">Game project</span>
+        <span class="tag">In development</span>
+        <br>
+
+        <a class="text-link"
+          href="https://github.com/gauravrabidas2012-ctrl"
+          target="_blank" rel="noopener">
+          Explore developer profile ↗
+        </a>
+      </article>
+
+      <article class="panel reveal">
+        <div class="game-art">
+          <span>RISE OF GAURAV</span>
+        </div>
+
+        <h3>Rise of Gaurav</h3>
+        <p>
+          An earlier game project that represents Gaurav’s hands-on
+          journey into creating and improving games.
+        </p>
+
+        <span class="tag">Game project</span>
+        <span class="tag">Web-based</span>
+        <br>
+
+        <a class="text-link"
+          href="https://github.com/gauravrabidas2012-ctrl/Rise-ofGaurav"
+          target="_blank" rel="noopener">
+          View project repository ↗
+        </a>
+      </article>
+
+      <article class="panel reveal">
+        <div class="game-art"
+          style="background:radial-gradient(circle at 75% 22%,#ffca8a,transparent 24%),linear-gradient(135deg,#3c2738,#111522 70%)">
+          <span>MORE SOON</span>
+        </div>
+
+        <h3>Next experiments</h3>
+        <p>
+          New concepts, mechanics, and creative digital projects can
+          be added here as they are built and tested.
+        </p>
+
+        <span class="tag">Work in progress</span>
+        <span class="tag">Ideas → builds</span>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- TRENDIX STUDIOS -->
+
+<section class="section" id="studio">
+  <div class="container">
+
+    <div class="section-head">
+      <div>
+        <div class="kicker">03 / The Studio</div>
+        <h2>Small studio.<br>Big imagination.</h2>
+      </div>
+    </div>
+
+    <div class="studio-banner reveal">
+
+      <div>
+        <div class="kicker">Independent creative studio</div>
+        <h3>Trendix Studios</h3>
+
+        <p>
+          Founded by Gaurav Rabidas, Trendix Studios is his
+          independent studio for creating games and digital projects.
+          The goal: keep experimenting, make ideas real, and improve
+          with every build.
+        </p>
+
+        <div>
+          <span class="tag">Game development</span>
+          <span class="tag">Digital projects</span>
+          <span class="tag">Creative technology</span>
+        </div>
+
+        <a class="text-link"
+          href="https://github.com/gauravrabidas2012-ctrl"
+          target="_blank" rel="noopener">
+          Find projects on GitHub ↗
+        </a>
+      </div>
+
+      <div class="studio-symbol" aria-hidden="true">TS.</div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+
+<section class="section" id="skills">
+  <div class="container">
+
+    <div class="section-head">
+      <div>
+        <div class="kicker">04 / Skills & Interests</div>
+        <h2>Learning by doing.</h2>
+      </div>
+
+      <p class="section-intro">
+        A snapshot of the areas Gaurav explores through study and
+        personal projects. Skills grow with every experiment.
+      </p>
+    </div>
+
+    <div class="split">
+
+      <div class="panel reveal">
+        <div class="icon">⌘</div>
+        <h3>Areas of focus</h3>
+        <p>
+          Building a foundation in web development and game creation,
+          while exploring how technology can solve problems and create
+          useful experiences.
+        </p>
       </div>
 
       <div class="reveal">
-        <h3 style="font-size:25px;margin-bottom:15px;">Always learning. Always improving.</h3>
-        <p class="about-text">
-          I believe that small, consistent actions can lead to
-          meaningful progress. I'm using my student years to
-          explore different skills, understand technology and
-          discover the kind of problems I want to solve.
-        </p>
-        <p class="about-text">
-          This website is my digital portfolio. It brings together
-          my interests, experiments, projects, goals and lessons
-          learned along the way.
-        </p>
-        <p class="about-text">
-          My journey is still at the beginning, and that's exactly
-          what makes it exciting: there is always something new
-          to learn and something better to build.
-        </p>
-        <a class="btn btn-primary" href="#journey">See My Journey →</a>
-      </div>
+        <div class="skill-list">
+          <span class="skill">HTML & CSS</span>
+          <span class="skill">JavaScript basics</span>
+          <span class="skill">Web development</span>
+          <span class="skill">Game development</span>
+          <span class="skill">UI & design</span>
+          <span class="skill">Creative problem-solving</span>
+          <span class="skill">Learning new tools</span>
+          <span class="skill">Project building</span>
+        </div>
 
-    </div>
-  </div>
-</section>
-
-<!-- =====================================
-     PAGE 03 — MY JOURNEY
-===================================== -->
-
-<section id="journey">
-  <div class="container">
-    <p class="section-label">02 / My journey</p>
-    <h2 class="section-title">Every expert starts<br><span class="gradient-text">as a beginner.</span></h2>
-    <p class="section-description">
-      A living timeline of my learning journey. I'll update this
-      section as I complete projects and discover new interests.
-    </p>
-
-    <div class="timeline reveal">
-      <div class="timeline-item">
-        <h3>Building my online presence</h3>
-        <p>
-          Creating my personal website and learning how web pages,
-          HTML, CSS, search engines and publishing work together.
+        <p class="contact-note">
+          This list can be updated as new skills and technologies are learned.
         </p>
       </div>
 
-      <div class="timeline-item">
-        <h3>Exploring creative skills</h3>
-        <p>
-          Practising video editing, photo editing, visual design
-          and ideas for digital content.
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+
+<section class="section" id="journey">
+  <div class="container">
+
+    <div class="section-head">
+      <div>
+        <div class="kicker">05 / The Journey</div>
+        <h2>Progress over perfection.</h2>
+      </div>
+
+      <p class="section-intro">
+        Every project starts with curiosity. Every version is a chance
+        to learn something new.
+      </p>
+    </div>
+
+    <div class="split">
+
+      <p class="manifesto reveal">
+        “The goal isn’t to know everything already.
+        It’s to <strong>keep learning, keep building, and keep shipping</strong>.”
+      </p>
+
+      <div class="list reveal">
+
+        <div class="list-row">
+          <div class="num">01</div>
+          <div>
+            <b>Learn the fundamentals</b>
+            <span>
+              Build a solid base in coding, design, and problem-solving.
+            </span>
+          </div>
+        </div>
+
+        <div class="list-row">
+          <div class="num">02</div>
+          <div>
+            <b>Turn ideas into projects</b>
+            <span>
+              Experiment with game mechanics and interactive web experiences.
+            </span>
+          </div>
+        </div>
+
+        <div class="list-row">
+          <div class="num">03</div>
+          <div>
+            <b>Improve every version</b>
+            <span>
+              Test, fix, refine, and make each project more useful and enjoyable.
+            </span>
+          </div>
+        </div>
+
+        <div class="list-row">
+          <div class="num">04</div>
+          <div>
+            <b>Grow Trendix Studios</b>
+            <span>
+              Keep creating and develop a clear identity through original work.
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+
+<section class="section" id="contact">
+  <div class="container">
+
+    <div class="section-head">
+      <div>
+        <div class="kicker">06 / Contact & Links</div>
+        <h2>Let’s connect.</h2>
+      </div>
+
+      <p class="section-intro">
+        For project discussions, collaborations, or a look at the work,
+        use the public links below.
+      </p>
+    </div>
+
+    <div class="contact">
+
+      <div class="contact-box reveal">
+        <h3>Contact details</h3>
+
+        <p class="contact-note">
+          Gaurav’s public project profile and portfolio are the best
+          places to start. No private phone number or personal email
+          is displayed here.
+        </p>
+
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <small>Based in</small>
+            <b>Sribhumi, Assam, India</b>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">💻</div>
+          <div>
+            <small>Role</small>
+            <b>Student · Developer</b>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">🏢</div>
+          <div>
+            <small>Studio</small>
+            <b>Trendix Studios</b>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-box reveal">
+        <h3>Find Gaurav online</h3>
+
+        <p class="contact-note">
+          Explore code, game projects, and the latest builds.
+        </p>
+
+        <div class="contact-links">
+
+          <a class="social"
+            href="https://github.com/gauravrabidas2012-ctrl"
+            target="_blank" rel="noopener">
+            ⌘ GitHub ↗
+          </a>
+
+          <a class="social"
+            href="https://gauravrabidas2012-ctrl.github.io/Gaurav-Rabidas-/"
+            target="_blank" rel="noopener">
+            ↗ Current website
+          </a>
+
+          <a class="social"
+            href="https://github.com/gauravrabidas2012-ctrl/Rise-ofGaurav"
+            target="_blank" rel="noopener">
+            🎮 Rise of Gaurav ↗
+          </a>
+
+          <a class="social" href="#games">
+            ✦ Game portfolio ↓
+          </a>
+
+        </div>
+
+        <p class="contact-note">
+          Add a dedicated public contact email here whenever one is ready.
         </p>
       </div>
 
-      <div class="timeline-item">
-        <h3>Developing a technology mindset</h3>
-        <p>
-          Exploring coding, computers, artificial intelligence
-          and how technology can solve real-world problems.
-        </p>
-      </div>
-
-      <div class="timeline-item">
-        <h3>The next chapter</h3>
-        <p>
-          Learning consistently, documenting genuine progress
-          and turning ideas into useful projects.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- =====================================
-     PAGE 04 — VISION
-===================================== -->
-
-<section id="vision">
-  <div class="container">
-    <p class="section-label">03 / My vision</p>
-    <h2 class="section-title">Think long-term.<br><span class="gradient-text">Build step by step.</span></h2>
-
-    <div class="grid-3">
-      <article class="card reveal">
-        <div class="card-icon">🧠</div>
-        <h3>Knowledge</h3>
-        <p>Build strong fundamentals in academics, technology, communication and problem-solving.</p>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-icon">⚡</div>
-        <h3>Innovation</h3>
-        <p>Experiment with ideas, learn from mistakes and create projects that demonstrate practical skills.</p>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-icon">🌍</div>
-        <h3>Impact</h3>
-        <p>Work towards creating useful digital products and opportunities that can help people.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- =====================================
-     PAGE 05 — SKILLS
-===================================== -->
-
-<section id="skills">
-  <div class="container">
-    <p class="section-label">04 / Skills & learning</p>
-    <h2 class="section-title">My current learning<br><span class="gradient-text">playground.</span></h2>
-    <p class="section-description">
-      These are areas I'm exploring. The bars represent areas of
-      focus, not verified professional proficiency.
-    </p>
-
-    <div class="grid-2">
-
-      <div class="card reveal">
-        <h3>💻 Technology</h3>
-
-        <div class="skill-item">
-          <div class="skill-heading"><span>HTML & CSS</span><span>Learning</span></div>
-          <div class="skill-track"><div class="skill-fill" style="--level:45%"></div></div>
-        </div>
-
-        <div class="skill-item">
-          <div class="skill-heading"><span>JavaScript</span><span>Exploring</span></div>
-          <div class="skill-track"><div class="skill-fill" style="--level:20%"></div></div>
-        </div>
-
-        <div class="skill-item">
-          <div class="skill-heading"><span>Computer fundamentals</span><span>Learning</span></div>
-          <div class="skill-track"><div class="skill-fill" style="--level:40%"></div></div>
-        </div>
-      </div>
-
-      <div class="card reveal">
-        <h3>🎨 Creativity</h3>
-
-        <div class="skill-item">
-          <div class="skill-heading"><span>Video editing</span><span>Practising</span></div>
-          <div class="skill-track"><div class="skill-fill" style="--level:45%"></div></div>
-        </div>
-
-        <div class="skill-item">
-          <div class="skill-heading"><span>Photo editing</span><span>Practising</span></div>
-          <div class="skill-track"><div class="skill-fill" style="--level:45%"></div></div>
-        </div>
-
-        <div class="skill-item">
-          <div class="skill-heading"><span>Content ideas</span><span>Developing</span></div>
-          <div class="skill-track"><div class="skill-fill" style="--level:50%"></div></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- =====================================
-     PAGE 06 — PROJECTS
-===================================== -->
-
-<section id="projects">
-  <div class="container">
-    <p class="section-label">05 / Selected work</p>
-    <h2 class="section-title">Ideas becoming<br><span class="gradient-text">real projects.</span></h2>
-    <p class="section-description">
-      A collection of my experiments and work in progress.
-      Add project links and screenshots as each project develops.
-    </p>
-
-    <div class="grid-3">
-
-      <article class="card project-card reveal">
-        <div class="project-cover">🌐</div>
-        <div class="project-content">
-          <span class="tag">WEB DEVELOPMENT</span>
-          <h3>Personal Website</h3>
-          <p>A portfolio website documenting my journey, skills, interests and projects.</p>
-          <a class="btn btn-outline" href="#contact">Project information ↗</a>
-        </div>
-      </article>
-
-      <article class="card project-card reveal">
-        <div class="project-cover">🎬</div>
-        <div class="project-content">
-          <span class="tag">CONTENT</span>
-          <h3>Quantum Routine</h3>
-          <p>A content-creation project for experimenting with videos and storytelling.</p>
-          <a class="btn btn-outline" href="#content">Explore content ↗</a>
-        </div>
-      </article>
-
-      <article class="card project-card reveal">
-        <div class="project-cover">🔬</div>
-        <div class="project-content">
-          <span class="tag">INNOVATION</span>
-          <h3>Science & Innovation</h3>
-          <p>A space for documenting school innovation ideas and experiments.</p>
-          <a class="btn btn-outline" href="#innovation">Explore innovation ↗</a>
-        </div>
-      </article>
-
-      <article class="card project-card reveal">
-        <div class="project-cover">📱</div>
-        <div class="project-content">
-          <span class="tag">DESIGN</span>
-          <h3>Mobile-first Design</h3>
-          <p>Learning to make websites usable on mobile phones and different screen sizes.</p>
-          <a class="btn btn-outline" href="#webdev">Learn more ↗</a>
-        </div>
-      </article>
-
-      <article class="card project-card reveal">
-        <div class="project-cover">🤖</div>
-        <div class="project-content">
-          <span class="tag">TECHNOLOGY</span>
-          <h3>AI Exploration</h3>
-          <p>Exploring artificial intelligence, its applications and responsible use.</p>
-          <a class="btn btn-outline" href="#ai">Explore AI ↗</a>
-        </div>
-      </article>
-
-      <article class="card project-card reveal">
-        <div class="project-cover">📝</div>
-        <div class="project-content">
-          <span class="tag">WRITING</span>
-          <h3>Learning Journal</h3>
-          <p>A place to record useful lessons, new discoveries and ideas worth revisiting.</p>
-          <a class="btn btn-outline" href="#blog">Read journal ↗</a>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- =====================================
-     PAGE 07 — PROJECT DETAILS
-===================================== -->
-
-<section id="project-details">
-  <div class="container">
-    <p class="section-label">06 / Project details</p>
-    <h2 class="section-title">Behind every<br><span class="gradient-text">build is a process.</span></h2>
-
-    <div class="grid-2">
-      <article class="card reveal">
-        <div class="card-icon">🎯</div>
-        <h3>The objective</h3>
-        <p>Every project begins with a clear question: what am I trying to learn, make or improve?</p>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-icon">🧩</div>
-        <h3>The process</h3>
-        <p>Break a large task into small steps, test each part and make improvements as I learn.</p>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-icon">🛠️</div>
-        <h3>The tools</h3>
-        <p>Document the languages, apps, platforms and resources actually used for each project.</p>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-icon">📈</div>
-        <h3>The result</h3>
-        <p>Record what worked, what needs improvement and what I would do differently next time.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- =====================================
-     PAGE 08 — ACHIEVEMENTS
-===================================== -->
-
-<section id="achievements">
-  <div class="container">
-    <p class="section-label">07 / Achievements</p>
-    <h2 class="section-title">Progress worth<br><span class="gradient-text">documenting.</span></h2>
-
-    <div class="grid-3">
-      <article class="card reveal">
-        <div class="card-icon">🚀</div>
-        <h3>Innovation Marathon</h3>
-        <p>Documenting participation and ideas. Add the official event details and evidence where appropriate.</p>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-icon">🧪</div>
-        <h3>Science Activities</h3>
-        <p>A space for school science activities, demonstrations, models and lessons learned.</p>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-icon">📚</div>
-        <h3>Continuous Learning</h3>
-        <p>Recording completed courses, genuine milestones and skills developed over time.</p>
-      </article>
-    </div>
-
-    <p class="section-description" style="margin-top:25px;">
-      Note: Add certificates, rankings and awards only when you
-      have the relevant genuine evidence.
-    </p>
-  </div>
-</section>
-
-<!-- =====================================
-     PAGE 09 — CERTIFICATES
-===================================== -->
-
-<section id="certificates">
-  <div class="container">
-    <p class="section-label">08 / Certificates</p>
-    <h2 class="section-title">Learning that can<br><span class="gradient-text">be demonstrated.</span></h2>
-
-    <div class="grid-2">
-      <article class="card reveal">
-        <div class="card-icon">🏅</div>
-        <h3>Course Certificates</h3>
-        <p>Add the course name, issuing organization, completion date and certificate link after completing a course.</p>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-icon">📄</div>
-        <h3>Participation Records</h3>
-        <p>Document verified participation in competitions, workshops and educational events.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- =====================================
-     PAGE 10 — INNOVATION MARATHON
-===================================== -->
-
-<section id="innovation">
-  <div class="container">
-    <p class="section-label">09 / Innovation</p>
-    <h2 class="section-title">Curiosity leads<br><span class="gradient-text">to better questions.</span></h2>
-
-    <div class="contact-panel reveal">
-      <h3 style="font-size:25px;margin-bottom:15px;">Innovation Marathon</h3>
-      <p class="section-description">
-        This section is for documenting my Innovation Marathon
-        participation, ideas, development process and reflections.
-        I can expand it with project details, photographs and
-        verified event information.
-      </p>
-      <div class="tag">IDEATION</div>
-      <div class="tag">PROBLEM SOLVING</div>
-      <div class="tag">LEARNING</div>
-    </div>
-  </div>
-</section>
-
-<!-- =====================================
-     PAGE 11 — HACKATHON
-===================================== -->
-
-<section id="hackathon">
-  <div class="container">
-    <p class="section-label">10 / Competitions</p>
-    <h2 class="section-title">Learning to solve<br><span class="gradient-text">real problems.</span></h2>
-
-    <div class="grid-2">
-      <article class="card reveal">
-        <div class="card-icon">💡</div>
-        <h3>Smart India Hackathon</h3>
-        <p>Explore the competition, understand problem statements and learn how teams turn ideas into solutions.</p>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-icon">🤝</div>
-        <h3>Teamwork</h3>
-        <p>Practise communicating ideas, dividing responsibilities and learning from other people's perspectives.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- =====================================
-     PAGE 12 — CODING
-===================================== -->
-
-<section id="coding">
-  <div class="container">
-    <p class="section-label">11 / Coding</p>
-    <h2 class="section-title">From curiosity<br><span class="gradient-text">to code.</span></h2>
-
-    <div class="grid-3">
-      <article class="card reveal">
-        <div class="card-icon">🧱</div>
-        <h3>HTML</h3>
-        <p>Learn how headings, paragraphs, links, images and forms structure a webpage.</p>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-icon">🎨</div>
-        <h3>CSS</h3>
-        <p>Explore layouts, responsive design, typography, gradients, transitions and animations.</p>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-icon">⚙️</div>
-        <h3>JavaScript</h3>
-        <p>Learn variables, functions, conditions, loops and interactive browser features.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- =====================================
-     PAGE 13 — WEB DEVELOPMENT
-===================================== -->
-
-<section id="webdev">
-  <div class="container">
-    <p class="section-label">12 / Web development</p>
-    <h2 class="section-title">Building for<br><span class="gradient-text">the modern web.</span></h2>
-
-    <div class="grid-2">
-      <article class="card reveal">
-        <h3>Frontend fundamentals</h3>
-        <p>Understand structure, visual presentation, accessibility, responsive layouts and user interaction.</p>
-      </article>
-
-      <article class="card reveal">
-        <h3>Publishing & SEO</h3>
-        <p>Explore GitHub Pages, page titles, descriptions, internal links, sitemaps and search indexing.</p>
-      </article>
-
-      <article class="card reveal">
-        <h3>Mobile-first thinking</h3>
-        <p>Design pages that remain readable and easy to navigate on smaller screens.</p>
-      </article>
-
-      <article class="card reveal">
-        <h3>Continuous improvement</h3>
-        <p>Test pages, fix broken links, simplify navigation and improve loading performance.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- =====================================
-     PAGE 14 — CONTENT CREATION
-===================================== -->
-
-<section id="content">
-  <div class="container">
-    <p class="section-label">13 / Content creation</p>
-    <h2 class="section-title">Ideas deserve<br><span class="gradient-text">good storytelling.</span></h2>
-
-    <div class="grid-3">
-      <article class="card reveal">
-        <div class="card-icon">🎥</div>
-        <h3>Video concepts</h3>
-        <p>Develop clear topics, interesting hooks and a logical flow for original videos.</p>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-icon">✍️</div>
-        <h3>Scripts</h3>
-        <p>Practise writing concise, accurate scripts that keep viewers interested.</p>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-icon">📊</div>
-        <h3>Learning from feedback</h3>
-        <p>Use audience feedback to improve clarity, editing and the usefulness of future content.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- =====================================
-     PAGE 15 — VIDEO EDITING
-===================================== -->
-
-<section id="video-editing">
-  <div class="container">
-    <p class="section-label">14 / Video editing</p>
-    <h2 class="section-title">Make every frame<br><span class="gradient-text">serve the story.</span></h2>
-
-    <div class="grid-2">
-      <article class="card reveal">
-        <div class="card-icon">✂️</div>
-        <h3>Editing fundamentals</h3>
-        <p>Practise cutting, pacing, transitions, audio balance and clear visual storytelling.</p>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-icon">🎧</div>
-        <h3>Sound & timing</h3>
-        <p>Learn how narration, sound effects and timing can support a video's message.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- =====================================
-     PAGE 16 — PHOTO EDITING
-===================================== -->
-
-<section id="photo-editing">
-  <div class="container">
-    <p class="section-label">15 / Photo editing</p>
-    <h2 class="section-title">Visual creativity<br><span class="gradient-text">with purpose.</span></h2>
-
-    <div class="grid-3">
-      <article class="card reveal">
-        <div class="card-icon">🌈</div>
-        <h3>Colour</h3>
-        <p>Experiment with colour balance, contrast and consistent visual moods.</p>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-icon">📐</div>
-        <h3>Composition</h3>
-        <p>Learn how spacing, framing and visual hierarchy guide attention.</p>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-icon">🖼️</div>
-        <h3>Design</h3>
-        <p>Practise making clear thumbnails, posters and graphics for digital projects.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- =====================================
-     PAGE 17 — QUANTUM ROUTINE
-===================================== -->
-
-<section id="quantum-routine">
-  <div class="container">
-    <p class="section-label">16 / Creator project</p>
-    <h2 class="section-title"><span class="gradient-text">Quantum Routine</span></h2>
-
-    <div class="contact-panel reveal">
-      <h3 style="font-size:25px;margin-bottom:15px;">A space to experiment with content</h3>
-      <p class="section-description">
-        Quantum Routine is my content project. This section can
-        feature original videos, gaming experiments, facts,
-        educational content and future creative ideas.
-      </p>
-      <a href="#contact" class="btn btn-primary">Project updates ↗</a>
-    </div>
-  </div>
-</section>
-
-<!-- =====================================
-     PAGE 18 — BLOG
-===================================== -->
-
-<section id="blog">
-  <div class="container">
-    <p class="section-label">17 / Blog & notes</p>
-    <h2 class="section-title">Ideas, lessons<br><span class="gradient-text">and discoveries.</span></h2>
-
-    <div class="grid-3">
-      <article class="card blog-card reveal">
-        <div class="blog-meta">WEB DEVELOPMENT • LEARNING NOTE</div>
-        <h3>What I'm learning by building a website</h3>
-        <p>Creating a personal website helps connect HTML, CSS, navigation and publishing.</p>
-        <a href="#webdev" class="btn btn-outline" style="margin-top:18px;">Explore topic →</a>
-      </article>
-
-      <article class="card blog-card reveal">
-        <div class="blog-meta">STUDENT LIFE • REFLECTION</div>
-        <h3>Why small projects matter</h3>
-        <p>Small experiments offer opportunities to practise, test ideas and learn from mistakes.</p>
-        <a href="#journey" class="btn btn-outline" style="margin-top:18px;">My journey →</a>
-      </article>
-
-      <article class="card blog-card reveal">
-        <div class="blog-meta">TECHNOLOGY • EXPLORATION</div>
-        <h3>Exploring the world of technology</h3>
-        <p>Understanding fundamentals makes it easier to explore more advanced ideas later.</p>
-        <a href="#technology" class="btn btn-outline" style="margin-top:18px;">Explore technology →</a>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- =====================================
-     PAGE 19 — TECHNOLOGY
-===================================== -->
-
-<section id="technology">
-  <div class="container">
-    <p class="section-label">18 / Technology</p>
-    <h2 class="section-title">Understand the tools<br><span class="gradient-text">shaping tomorrow.</span></h2>
-
-    <div class="grid-3">
-      <article class="card reveal">
-        <div class="card-icon">🌐</div>
-        <h3>The Internet</h3>
-        <p>Explore websites, browsers, servers, domains and how information travels online.</p>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-icon">🖥️</div>
-        <h3>Computer systems</h3>
-        <p>Understand hardware, operating systems, software and digital security fundamentals.</p>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-icon">🔐</div>
-        <h3>Digital responsibility</h3>
-        <p>Learn about privacy, strong passwords, safe browsing and responsible online behaviour.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- =====================================
-     PAGE 20 — AI & FUTURE
-===================================== -->
-
-<section id="ai">
-  <div class="container">
-    <p class="section-label">19 / AI & future</p>
-    <h2 class="section-title">Explore possibilities.<br><span class="gradient-text">Think responsibly.</span></h2>
-
-    <div class="grid-2">
-      <article class="card reveal">
-        <div class="card-icon">🤖</div>
-        <h3>Artificial intelligence</h3>
-        <p>Explore how AI systems work, what they can do and why checking their outputs matters.</p>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-icon">⚖️</div>
-        <h3>Responsible technology</h3>
-        <p>Think about privacy, fairness, reliability and the real-world impact of new technologies.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- =====================================
-     PAGE 21 — GOALS
-===================================== -->
-
-<section id="goals">
-  <div class="container">
-    <p class="section-label">20 / My goals</p>
-    <h2 class="section-title">A direction to follow.<br><span class="gradient-text">Room to grow.</span></h2>
-
-    <div class="grid-3">
-      <article class="card reveal">
-        <div class="goal-number">01</div>
-        <h3>Academic foundations</h3>
-        <p>Strengthen mathematics, science, English and computer fundamentals.</p>
-      </article>
-
-      <article class="card reveal">
-        <div class="goal-number">02</div>
-        <h3>Practical skills</h3>
-        <p>Build coding projects, improve design skills and document real progress.</p>
-      </article>
-
-      <article class="card reveal">
-        <div class="goal-number">03</div>
-        <h3>Long-term growth</h3>
-        <p>Explore entrepreneurship, leadership and opportunities for higher education.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- =====================================
-     PAGE 22 — HARVARD DREAM
-===================================== -->
-
-<section id="harvard">
-  <div class="container">
-    <p class="section-label">21 / Higher education</p>
-    <h2 class="section-title">Dream big.<br><span class="gradient-text">Prepare intelligently.</span></h2>
-
-    <div class="contact-panel reveal">
-      <h3 style="font-size:25px;margin-bottom:15px;">My higher-education aspirations</h3>
-      <p class="section-description">
-        I'm interested in exploring universities such as Harvard.
-        My focus is on building strong academic foundations,
-        developing meaningful projects, exploring extracurricular
-        activities and researching admissions and financial aid.
-      </p>
-      <p class="section-description">
-        Admission and financial assistance are never guaranteed.
-        I'll continue researching official requirements and
-        preparing thoughtfully as I progress through school.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- =====================================
-     PAGE 23 — GALLERY
-===================================== -->
-
-<section id="gallery">
-  <div class="container">
-    <p class="section-label">22 / Gallery</p>
-    <h2 class="section-title">Moments from<br><span class="gradient-text">the journey.</span></h2>
-    <p class="section-description">
-      These are placeholders. Replace them with your own images
-      of projects, designs or events you have permission to share.
-    </p>
-
-    <div class="grid-3">
-      <div class="gallery-box reveal"><div><span>📸</span><h3>Project Gallery</h3><p>Project photographs</p></div></div>
-      <div class="gallery-box reveal"><div><span>🎨</span><h3>Creative Work</h3><p>Designs and edits</p></div></div>
-      <div class="gallery-box reveal"><div><span>🚀</span><h3>Learning Moments</h3><p>Selected milestones</p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- =====================================
-     PAGE 24 — CONTACT
-===================================== -->
-
-<section id="contact">
-  <div class="container">
-    <p class="section-label">23 / Contact</p>
-    <h2 class="section-title">Let's connect<br><span class="gradient-text">through ideas.</span></h2>
-
-    <div class="contact-panel reveal">
-      <h3 style="font-size:25px;margin-bottom:15px;">Have a project or idea?</h3>
-      <p class="section-description">
-        This section can contain your public creator profiles,
-        a professional contact method or links to your projects.
-        Add only contact details you are comfortable sharing.
-      </p>
-
-      <div class="contact-links">
-        <!-- Replace # with your real public profile links -->
-        <a href="#home" class="btn btn-primary">Back to Home ↑</a>
-        <a href="#projects" class="btn btn-outline">View Projects</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- =====================================
-     PAGE 25 — PRIVACY
-===================================== -->
-
-<section id="privacy">
-  <div class="container">
-    <p class="section-label">24 / Privacy</p>
-    <h2 class="section-title">Privacy &<br><span class="gradient-text">responsible sharing.</span></h2>
-
-    <div class="card reveal">
-      <h3>Information on this website</h3>
-      <p>
-        This is a personal portfolio website. Do not add private
-        addresses, passwords, school identification documents,
-        private phone numbers or other sensitive information.
-      </p>
-
-      <h3 style="margin-top:25px;">External links</h3>
-      <p>
-        External services may have their own privacy policies.
-        Review those policies before sharing personal information.
-      </p>
-
-      <h3 style="margin-top:25px;">Updates</h3>
-      <p>
-        Update this section if you add forms, analytics, cookies
-        or other features that collect visitor information.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- =====================================
-     PAGE 26 — SITEMAP
-===================================== -->
-
-<section id="site-map">
-  <div class="container">
-    <p class="section-label">25 / Explore the website</p>
-    <h2 class="section-title">Your guide to<br><span class="gradient-text">this digital space.</span></h2>
-
-    <div class="grid-4">
-      <div class="card"><h3>Personal</h3><p><a href="#about">About Me</a></p><p><a href="#journey">My Journey</a></p><p><a href="#vision">My Vision</a></p></div>
-      <div class="card"><h3>Work</h3><p><a href="#projects">Projects</a></p><p><a href="#project-details">Project Details</a></p><p><a href="#achievements">Achievements</a></p></div>
-      <div class="card"><h3>Learning</h3><p><a href="#skills">Skills</a></p><p><a href="#coding">Coding</a></p><p><a href="#technology">Technology</a></p></div>
-      <div class="card"><h3>Explore</h3><p><a href="#blog">Blog</a></p><p><a href="#gallery">Gallery</a></p><p><a href="#contact">Contact</a></p></div>
     </div>
   </div>
 </section>
 
 </main>
 
-<!-- =====================================
-     FOOTER
-===================================== -->
-
-<footer>
+<footer class="footer">
   <div class="container footer-inner">
-    <div>
-      <a class="logo" href="#home">GAURAV<span>.</span></a>
-      <p style="margin-top:8px;">Learning today. Building for tomorrow.</p>
-    </div>
+    <span>
+      © <span id="year"></span> Gaurav Rabidas · Built with curiosity.
+    </span>
 
-    <div class="footer-links">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#blog">Blog</a>
-      <a href="#privacy">Privacy</a>
-      <a href="#site-map">Sitemap</a>
-    </div>
+    <span>Student · Developer · Founder of Trendix Studios</span>
 
-    <p>© <span id="year"></span> Gaurav Rabidas</p>
+    <a class="backtop" href="#top">Back to top ↑</a>
   </div>
 </footer>
 
-<button id="backToTop" aria-label="Back to top">↑</button>
-
-<!-- =====================================
-     JAVASCRIPT
-===================================== -->
+</div>
 
 <script>
-/* MOBILE NAVIGATION */
-const menuToggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
+const menuBtn = document.getElementById('menuBtn');
+const navlinks = document.getElementById('navlinks');
 
-menuToggle.addEventListener("click", function () {
-  navLinks.classList.toggle("open");
+menuBtn.addEventListener('click', () => {
+  const open = navlinks.classList.toggle('open');
+
+  menuBtn.setAttribute('aria-expanded', String(open));
+  menuBtn.textContent = open ? '✕' : '☰';
 });
 
-document.querySelectorAll(".nav-links a").forEach(function (link) {
-  link.addEventListener("click", function () {
-    navLinks.classList.remove("open");
+navlinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navlinks.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    menuBtn.textContent = '☰';
   });
 });
 
-/* CURRENT YEAR */
-document.getElementById("year").textContent =
+document.getElementById('year').textContent =
   new Date().getFullYear();
 
-/* REVEAL CARDS WHEN SCROLLING */
-const revealElements = document.querySelectorAll(".reveal");
-
-if ("IntersectionObserver" in window) {
-  const observer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.12
-  });
-
-  revealElements.forEach(function (element) {
-    observer.observe(element);
-  });
-} else {
-  revealElements.forEach(function (element) {
-    element.classList.add("visible");
-  });
-}
-
-/* BACK TO TOP BUTTON */
-const backToTop = document.getElementById("backToTop");
-
-window.addEventListener("scroll", function () {
-  backToTop.style.display =
-    window.scrollY > 450 ? "grid" : "none";
-});
-
-backToTop.addEventListener("click", function () {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-});
-
-/* UPDATE NAVIGATION HASH WITHOUT BREAKING LINKS */
-document.querySelectorAll('a[href^="#"]').forEach(function (link) {
-  link.addEventListener("click", function (event) {
-    const targetId = link.getAttribute("href");
-
-    if (targetId === "#") {
-      event.preventDefault();
-      return;
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
     }
+  });
+}, {
+  threshold: .12
+});
 
-    const target = document.querySelector(targetId);
+document.querySelectorAll('.reveal').forEach(el => {
+  observer.observe(el);
+});
 
-    if (target) {
-      event.preventDefault();
+const sections = [
+  ...document.querySelectorAll('main section[id]')
+];
 
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
+const navObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navlinks.querySelectorAll('a').forEach(a => {
+        a.classList.toggle(
+          'active',
+          a.getAttribute('href') === '#' + entry.target.id
+        );
       });
-
-      if (history.replaceState) {
-        history.replaceState(null, "", targetId);
-      }
     }
   });
+}, {
+  rootMargin: '-30% 0px -60% 0px'
 });
 
-/* ACCESSIBILITY: SUPPORT REDUCED MOTION */
-if (window.matchMedia &&
-    window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  document.documentElement.style.scrollBehavior = "auto";
-
-  document.querySelectorAll("*").forEach(function (element) {
-    element.style.animationDuration = "0.01ms";
-    element.style.transitionDuration = "0.01ms";
-  });
-}
+sections.forEach(section => {
+  navObserver.observe(section);
+});
 </script>
 
 </body>
-  </html>
+</html>
